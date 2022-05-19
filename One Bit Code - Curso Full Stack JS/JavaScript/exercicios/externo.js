@@ -1,0 +1,10 @@
+alert("Sejam bem-vindos ao Calculador de Idade")
+alert("precisaremos de duas pessoas com idades diferentes")
+let NAME = prompt("Qual o nome da pessoa mais velha?")
+let IDADE = prompt("Qual a idade da pessoa mais velha?")
+let name = prompt("Qual o nome da pessoa mais nova?")
+let idade = prompt("Qual a idade da pessoa mais nova?")
+let diferenca = IDADE - idade
+alert("O(a) " + NAME + " é o(a) mais velho(a) e tem " + IDADE + " anos.")
+alert("O(a) " + name + " é o(a) mais novo(a) e tem " + idade + " anos.")
+alert("A diferença de idade é de " + diferenca + " anos.")

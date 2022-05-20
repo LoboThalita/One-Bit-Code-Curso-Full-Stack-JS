@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop3</title>
+</head>
+<body>
+    <script>
+        /*
+        1- Solicitar nome da name
+        2- inverter o nome
+        3- caracter proibido: e
+        quando chegar nele deve parar
+        4- imprimir nome invertido
+        nome original:
+        Nome após ocultação:
+        */
+
+        let name = prompt("Qual o nome da nave?")
+        let newName = ""
+        for(let i = name.length-1 ; i >= 0 ; i --){
+            if(name[i] == "e"){
+                break
+            }else{
+            newName += name[i]
+        }}
+alert("Nome original: " + name +"\n Nome após ocultação: " + newName)
+</script>
+</body>
+</html>

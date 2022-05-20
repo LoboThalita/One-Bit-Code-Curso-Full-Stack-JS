@@ -5,8 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loop3</title>
+ 
 </head>
 <body>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
     <script>
         /*
         1- Solicitar nome da name
@@ -17,7 +23,6 @@
         nome original:
         Nome após ocultação:
         */
-
         let name = prompt("Qual o nome da nave?")
         let newName = ""
         for(let i = name.length-1 ; i >= 0 ; i --){

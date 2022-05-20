@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex funções</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+    <script>
+        /*
+        - Recebe o nome da nave
+        - menu com:
+            1. acelerar em 5km/s
+            2.desacelerar em 5km/s (nunca fica negativo)
+            3. imorimir dados (nome e velocidade atual)
+            4. sair do programa
+        - caso esolha outra opção exibir menu novamente
+        - Função para o menu 
+        -função para cada função do menu
+        - encerrar somente se digitar 4
+        */
+        let name = prompt("Qual o nome da nave?")
+        let option
+        let velocity = 0
+        menu(0)
+        
+        function aceleration(){
+            velocity += 5
+            alert ("Nave acelerada em mais 5km/s")
+            menu()
+        }
+
+        function desaceleration(){
+            if(velocity>=5){
+                velocity -= 5
+            alert("Nave desacelerada em menos 5km/s")
+            }else{
+                alert("Impossivel desalerar mais")
+            }
+            menu()
+        }
+
+        function dados(){
+            alert("Nome da nave: " + name + "\nVelocidade atual: " + velocity + " km/s")
+            menu()
+        }
+
+        function fim(){
+            alert("Obrigado pela visita, até a próxima!")
+        }
+
+        function menu(){
+            option = prompt("Escolha uma opção:\n1.Acelerar em 5km/s\n2. Desacelerar em 5km/s\n3. Imprimir dados da nave\n4. Sair")    
+            switch (option){
+                case "1":
+                    aceleration()
+                    break;
+                case "2":
+                    desaceleration()
+                    break;
+                case "3":
+                    dados()
+                    break;
+                case "4":
+                    fim()
+                    break;
+                default:
+                    alert("Por favor, escolha uma opção válida")
+                    menu()
+                    break;
+            } 
+        }
+    </script>
+
+</body>
+</html>

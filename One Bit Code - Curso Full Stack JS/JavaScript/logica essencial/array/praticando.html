@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando array</title>
+</head>
+
+<body>
+    <script>
+        const hitchedspaceships = [
+            ["Fenix", 8, true],
+            ["Golias", 10, true],
+            ["Helmet", 5, false],
+            ["Elemental", 3, true],
+            ["Drwin", 15, false]
+        ]
+        //plataforma de engate = indice da nave + 1
+        /*
+        Objetivos:
+        1. filtrar o nome das naves que tem mais de 9 tripulantes
+        2. Informar o número da plataforma em que está a primeira nave que ainda está com engate pendente (dica: findIndex)
+        3. Destacar o nome de todas as naves colocando-as em caixa alta e exibindo
+        4. exibir um alerta com todas as informações
+        */
+
+        let names = function () {
+            let name = []
+            for (let i = 0; i < hitchedspaceships.length; i++) {
+                name.push(hitchedspaceships[i][0])
+            }
+            let nineChars = name.filter(elements => { return elements.length > 9 })
+            return nineChars;
+        }
+        let engate = function () {
+            let index = 0
+            for (let i = 0; i < hitchedspaceships.length; i++) {
+                if (hitchedspaceships[i][2] == false) {
+                    index = i + 1
+                    return index
+                    break;
+                }
+            }
+        }
+
+        let uper = function(){
+            let name = []
+            for (let i = 0; i < hitchedspaceships.length; i++) {
+                name.push(hitchedspaceships[i][0])
+            }
+            let up = name.toUpperCase()
+        }
+
+    </script>
+</body>
+
+</html>

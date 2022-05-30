@@ -26,13 +26,14 @@
         4. exibir um alerta com todas as informações
         */
 
-        let names = function () {
-            let name = []
-            for (let i = 0; i < hitchedspaceships.length; i++) {
-                name.push(hitchedspaceships[i][0])
+        let tripulants = function () {
+            trip = []
+            for( let i = 0 ; i < hitchedspaceships.length ; i ++){
+                if(hitchedspaceships[i][1] > 9){
+                    trip.push(hitchedspaceships[i][0])
+                }
             }
-            let nineChars = name.filter(elements => { return elements.length > 9 })
-            return nineChars;
+            return trip;
         }
         let engate = function () {
             let index = 0
@@ -46,12 +47,14 @@
         }
 
         let uper = function(){
-            let name = []
+            let n = []
             for (let i = 0; i < hitchedspaceships.length; i++) {
-                name.push(hitchedspaceships[i][0])
+                n.push(hitchedspaceships[i][0].toUpperCase())
             }
-            let up = name.toUpperCase()
+            return n;
         }
+        
+        alert("Naves: " + uper() + "\nNave com 9 ou mais tripulantes: " + tripulants() + "\nNave mais próxima não engatada: " + engate())
 
     </script>
 </body>

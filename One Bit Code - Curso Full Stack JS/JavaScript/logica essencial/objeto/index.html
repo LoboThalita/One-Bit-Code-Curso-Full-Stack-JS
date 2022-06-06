@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto</title>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        /*
+        1. prompt para pegar o nome, tipo, vel max da nave
+        2. vel inicial = 0 km/s
+        3. menu com opção: (prompt)
+           -parar: exibir mensagem com as caracteristicas da nave e em que velocidaded estava.
+           -acelerar: pronpt com valor de aceleração.
+        4. quando acelerado verificar se a velocidade maxima foi ultrapassada, caso sim alert informando a vel e a vel maxima.
+        */
+        
+        let nave = {
+            vel: 0,
+            acel: function(acelerarion){
+                this.vel+=acelerarion
+            }
+        }
+
+        function questions(){
+            nave.name = prompt("Informe o nome da nave")
+            nave.type = prompt("Qual o tipo da nave?")
+            nave.velMax = Number(prompt("Qual a vel max da nave?"))
+        }
+
+        function stop(){
+            alert("Nome: " + nave.name +
+            "\nTipo: " + nave.type + 
+            "\nVelociade atingida: " + nave.vel +"Km/s"+
+            "\nNAVE PARADA! VELOCIDADE = 0Km/s")
+            nave.vel = 0
+        }
+
+        function menu(){
+            let option = 0
+            while(option!=2){
+            option = (prompt("Escolha uma opção:\n"+
+            "1.Acelerar\n"+
+            "2.Parar"))
+            
+                switch(option){
+                case "1": 
+                    let a = Number(prompt("Quanto deseja acelerar?"))
+                    nave.acel(a)
+                    if(nave.vel>nave.velMax){
+                        alert("NAVE ESTÁ ACIMA DA VELOCIDADE!"+
+                        "\nVelocidade atual: " + nave.vel + "Km/s"+
+                        "\nVelocidade máxima: " + nave.velMax + "Km/s")
+                    }
+                break;
+                case "2":
+                    stop()
+                break;
+                default:
+                    alert("Opção inválida")
+                break;
+            }}
+        }
+
+        questions()
+        menu()
+    </script>
+</body>
+
+</html>

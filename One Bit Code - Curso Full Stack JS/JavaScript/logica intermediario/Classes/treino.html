@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class book {
+            constructor(name, publisher, pages) {
+                this.name = name
+                this.publisher = publisher
+                this.pages = pages
+            }
+
+            announceTitle() {
+                console.log(`Título: ${this.name}`)
+            }
+
+            describeBook() {
+                console.log(`${this.name} é um livro da editora ${this.publisher} e tem ${this.pages} páginas.`)
+            }
+        }
+
+        const NodeJs = new book("Primeiros passos com NodeJs", "Casa do Código", 195)
+        NodeJs.announceTitle()
+        NodeJs.describeBook()
+    </script>
+</body>
+
+</html>

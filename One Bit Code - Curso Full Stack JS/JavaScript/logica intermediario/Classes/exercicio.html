@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando classes</title>
+</head>
+
+<body>
+    <script>
+        /*
+        estação espacial com lista de naves
+        cada nave tem: noem, quantidade de tripulantes, engatada ou não, portas abertas ou não.
+        menu:
+        1 realizar engate:
+                possivel cadastrar nave com nome e numero de tripulantes
+                a nova nave deve ser engatada, quando engatas portas abertas, 
+        2 imprimir naves (alert)
+        3 sair
+        -----
+        deve ter uma clase para a espaçonave(com metodo que engata)
+        array para armazenar espaçonaves
+        */
+
+        class spaceship {
+            constructor(name, q,) {
+                this.name = name
+                this.q = q
+                this.engate = false
+                this.door = false
+            }
+            eng() {
+                this.engate = true
+                this.door = true
+            }
+        }
+
+        function registration() {
+            let name = prompt("Qual o nome da nave?")
+            let q = prompt("Qual a quantidade de trupulantes de " + name + "?")
+            let spaceships = new spaceship(name, q)
+            return spaceships
+        }
+
+        let naves = []
+        function print(naves) {
+            let spaceshipList = ""
+            naves.forEach((spaceship, index) => {
+                spaceshipList += (index + 1) + "- " + spaceship.name + " (" + spaceship.q + " tripulantes)\n"
+            })
+            alert(spaceshipList)
+        }
+
+
+        function menu() {
+            let option = 0
+            while (option != "3") {
+                option = prompt("Escolha uma opção:\n" +
+                    "1. Realizar engate.\n" +
+                    "2. Imprimir naves.\n" +
+                    "3. Sair.")
+                switch (option) {
+                    case "1":
+                        let spaceshipToAdd = registration()
+                        spaceshipToAdd.eng
+                        naves.push(spaceshipToAdd)
+                        break;
+                    case "2":
+                        print(naves)
+                        break;
+                    case "3":
+                        break;
+                    default:
+                        alert("Escolha uma opção válida")
+                        break;
+
+                }
+            }
+        }
+        menu()
+    </script>
+</body>
+
+</html>
